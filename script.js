@@ -18,8 +18,9 @@ const nextYear = currentYear + 1;
 document.getElementById('next-year').innerText = nextYear;
 document.getElementById('current-year-display').innerText = nextYear;
 
-//const newYearTime = new Date(`January 1, ${nextYear} 00:00:00`).getTime();
-const newYearTime = new Date().getTime() + 5000;
+const newYearTime = new Date(`January 1, ${nextYear} 00:00:00`).getTime();
+//const newYearTime = new Date().getTime() + 5000;
+
 const countdownInterval = setInterval(updateCountdown, 1000);
 function updateCountdown() {
     const now = new Date().getTime() + timeOffset;
