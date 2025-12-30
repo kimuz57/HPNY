@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="fireworksCanvas"></canvas>
+    <div class="container">
+        <div id="countdown-container">
+            <h1>Countdown to <span id="next-year"></span></h1>
+            <div class="countdown">
+                <div class="time-box">
+                    <h2 id="days">00</h2>
+                    <small>Days</small>
+                </div>
+                <div class="time-box">
+                    <h2 id="hours">00</h2>
+                    <small>Hours</small>
+                </div>
+                <div class="time-box">
+                    <h2 id="minutes">00</h2>
+                    <small>Minutes</small>
+                </div>
+                <div class="time-box">
+                    <h2 id="seconds">00</h2>
+                    <small>Seconds</small>
+                </div>
+            </div>
+        </div>
+
+        <div id="newyear-message">
+            <div class="happy-text">Happy New Year</div>
+            <div class="sub-text">สวัสดีปีใหม่ <span id="current-year-display"></span></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
