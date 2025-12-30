@@ -8,20 +8,26 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* ตั้งค่าพื้นหลังเป็นรูปภาพ พร้อมมีเงาดำทับจางๆ (Overlay) เพื่อให้อ่านตัวหนังสือง่าย */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('photo1.png'); /* <-- อย่าลืมเช็คนามสกุลไฟล์ .jpg หรือ .png */
-    background-size: cover;      /* ขยายรูปให้เต็มจอ */
-    background-position: center; /* จัดรูปให้อยู่ตรงกลาง */
-    background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('photo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
+    transition: background-image 1s ease-in-out;
 }
 
-/* Container สำหรับเนื้อหา */
+body.celebrate-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.75)), url('photo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .container {
     text-align: center;
     z-index: 10;
@@ -36,7 +42,6 @@ h1 {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-/* กล่องนับถอยหลัง */
 .countdown {
     display: flex;
     justify-content: center;
@@ -70,7 +75,6 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* ข้อความสวัสดีปีใหม่ (ซ่อนไว้ก่อน) */
 #newyear-message {
     display: none;
     flex-direction: column;
@@ -81,7 +85,7 @@ h1 {
 .happy-text {
     font-size: 6rem;
     font-weight: 800;
-    background: linear-gradient(90deg, #ff00cc, #3333ff, #ff00cc);
+    background: linear-gradient(80deg, #0cffeb, #1d00be, #0cffeb);
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -95,7 +99,6 @@ h1 {
     text-shadow: 0 0 10px #fff;
 }
 
-/* Canvas สำหรับพลุ */
 canvas {
     position: absolute;
     top: 0;
@@ -106,7 +109,6 @@ canvas {
     pointer-events: none;
 }
 
-/* Animations */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -122,42 +124,30 @@ canvas {
     100% { background-position: 100% 50%; }
 }
 
-/* Mobile Responsive 
-@media (max-width: 768px) {
-    .time-box {
-        min-width: 80px;
-        padding: 10px;
-    }
-    .time-box h2 { font-size: 2.5rem; }
-    h1 { font-size: 1.5rem; }
-    .happy-text { font-size: 3rem; }
-}*/
-/* Mobile Responsive: ปรับแก้ให้แสดงผล 2x2 สวยงาม */
 @media (max-width: 768px) {
     .container {
-        width: 90%; /* ให้คอนเทนเนอร์ไม่ชิดขอบจอเกินไป */
+        width: 90%;
     }
     h1 {
-        font-size: 1.5rem; /* ลดขนาดหัวข้อลงหน่อยจะได้ไม่ล้น */
-        margin-bottom: 30px; /* เพิ่มระยะห่างจากกล่องเวลานิดนึง */
+        font-size: 1.5rem;
+        margin-bottom: 30px;
     }
     .countdown {
-        gap: 10px; /* ลดช่องว่างระหว่างกล่อง */
+        gap: 10px;
     }
     .time-box {
-        /* บังคับให้กล่องมีความกว้างประมาณ 45% ของหน้าจอ (เพื่อให้วางได้แถวละ 2 กล่อง) */
         flex: 1 1 40%; 
-        min-width: auto; /* ยกเลิกการกำหนดความกว้างขั้นต่ำเดิม */
-        padding: 15px 5px; /* ปรับระยะห่างภายในกล่อง */
+        min-width: auto;
+        padding: 15px 5px;
     }
     .time-box h2 { 
-        font-size: 2.5rem; /* ปรับขนาดตัวเลขให้พอดี */
+        font-size: 2.5rem;
     }
     .time-box small {
-        font-size: 0.8rem; /* ปรับขนาดตัวหนังสือ Days/Hours ให้เล็กลงนิดนึง */
+        font-size: 0.8rem;
     }
     .happy-text { 
-        font-size: 2.5rem; /* ปรับขนาดคำอวยพรตอนจบ */
+        font-size: 2.5rem;
     }
     .sub-text {
         font-size: 1.2rem;
