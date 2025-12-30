@@ -122,7 +122,7 @@ canvas {
     100% { background-position: 100% 50%; }
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive 
 @media (max-width: 768px) {
     .time-box {
         min-width: 80px;
@@ -131,4 +131,35 @@ canvas {
     .time-box h2 { font-size: 2.5rem; }
     h1 { font-size: 1.5rem; }
     .happy-text { font-size: 3rem; }
+}*/
+/* Mobile Responsive: ปรับแก้ให้แสดงผล 2x2 สวยงาม */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* ให้คอนเทนเนอร์ไม่ชิดขอบจอเกินไป */
+    }
+    h1 {
+        font-size: 1.5rem; /* ลดขนาดหัวข้อลงหน่อยจะได้ไม่ล้น */
+        margin-bottom: 30px; /* เพิ่มระยะห่างจากกล่องเวลานิดนึง */
+    }
+    .countdown {
+        gap: 10px; /* ลดช่องว่างระหว่างกล่อง */
+    }
+    .time-box {
+        /* บังคับให้กล่องมีความกว้างประมาณ 45% ของหน้าจอ (เพื่อให้วางได้แถวละ 2 กล่อง) */
+        flex: 1 1 40%; 
+        min-width: auto; /* ยกเลิกการกำหนดความกว้างขั้นต่ำเดิม */
+        padding: 15px 5px; /* ปรับระยะห่างภายในกล่อง */
+    }
+    .time-box h2 { 
+        font-size: 2.5rem; /* ปรับขนาดตัวเลขให้พอดี */
+    }
+    .time-box small {
+        font-size: 0.8rem; /* ปรับขนาดตัวหนังสือ Days/Hours ให้เล็กลงนิดนึง */
+    }
+    .happy-text { 
+        font-size: 2.5rem; /* ปรับขนาดคำอวยพรตอนจบ */
+    }
+    .sub-text {
+        font-size: 1.2rem;
+    }
 }
